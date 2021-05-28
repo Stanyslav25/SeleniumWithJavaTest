@@ -1,12 +1,11 @@
 package login;
 
-import Pages.LoginPage;
-import Pages.SecureAreaPage;
+import pages.LoginPage;
+import pages.SecureAreaPage;
 import base.BaseTest;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
@@ -22,8 +21,9 @@ public class LoginTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+//        assertEquals(secureAreaPage.getAlertText(),"You logged into a secure area!","Alert text incorrect");
         assertTrue(secureAreaPage.getAlertText().contains(
                 "You logged into a secure area!"),
-                "Allert is incorrect");
+                "Alert is incorrect");
     }
 }
